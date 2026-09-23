@@ -1,3 +1,4 @@
+
 import wollok.game.*
 import objetos.*
 
@@ -12,7 +13,13 @@ program futbolito{
 	keyboard.left().onPressDo({lionel.retroceder()})
 	keyboard.right().onPressDo({lionel.avanzar()})
 
-	game.start()
+	keyboard.t().onPressDo({lionel.darPaseAtras()})
+	keyboard.p().onPressDo({lionel.patear()})
 
+	keyboard.b().onPressDo({lionel.buscar()})
+	keyboard.i().onPressDo({pelota.inicio()})
+
+
+	game.start()
 
 }
