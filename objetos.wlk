@@ -1,4 +1,3 @@
-
 /** First Wollok example */
 import wollok.game.*
 
@@ -22,13 +21,9 @@ object lionel {
 	method buscar() {
 		position = objetivo.position()
 	}
-
-	method patear() {
-		objetivo.patear()
-	}
-
 	
 }
+
 
 object pelota {
 	const property image="pelota.png"
@@ -37,10 +32,4 @@ object pelota {
 	method inicio() {
 		position = game.at(0,5)
 	}
-
-	method patear() {
-		position = game.at((position.x() + 3).min(game.width() - 1), position.y())
-	}
-
 }
-
