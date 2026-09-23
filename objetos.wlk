@@ -28,12 +28,29 @@ object lionel {
 	}
 
 	
+	method darPaseAtras() {
+	  self.validarEstarSobreLaPelota()
+	  pelota.taquito()
+	}
+
+	method validarEstarSobreLaPelota() {
+	  if(!pelota.hayPelota(position)) {
+		self.error("pelota muy lejos")
+	  }
+	}
 }
 
 object pelota {
 	const property image="pelota.png"
 	var property position = game.at(5,5)	
 
+	method taquito() {
+	  	position = game.at(0.max(position.x() - 2), position.y()) 
+	}
+
+	method hayPelota(_position) {
+	  return position == _position
+	}
 	method inicio() {
 		position = game.at(0,5)
 	}
