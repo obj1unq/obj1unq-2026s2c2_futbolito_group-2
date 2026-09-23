@@ -5,6 +5,7 @@ object lionel {
 	var camiseta = titular
 	
 	var property position = game.at(3,5)
+	const objetivo = pelota
 	
 	method image() {
 		return "lionel-titular.png"
@@ -29,12 +30,21 @@ object lionel {
 	method camiseta() {
 		return camiseta
 	}
+
+	method buscar() {
+		position = objetivo.position()
+	}
+	
 }
 
 
 object pelota {
 	const property image="pelota.png"
 	var property position = game.at(5,5)	
+
+	method inicio() {
+		position = game.at(0,5)
+	}
 }
 
 object titular {
