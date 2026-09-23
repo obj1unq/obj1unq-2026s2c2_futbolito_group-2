@@ -26,6 +26,7 @@ object lionel {
 	method patear() {
 		objetivo.patear()
 	}
+
 	
 }
 
@@ -40,5 +41,6 @@ object pelota {
 	method patear() {
 		position = game.at((position.x() + 3).min(game.width() - 1), position.y())
 	}
+
 }
 

@@ -2,6 +2,7 @@ import objetos.*
 
 describe "tests de futbolito" {
 
+
     method initialize() {
         // Se define la dimensión del tablero para los tests
         game.width(15)
@@ -25,6 +26,7 @@ describe "tests de futbolito" {
         assert.equals(origen, pelota.position())
     }
 
+
     test "patear la pelota" {
         // La pelota inicia en (5,5) y al patear debe avanzar 3 posiciones a la derecha -> (8,5)
         const posicionEsperada = game.at(8, 5)
@@ -34,5 +36,4 @@ describe "tests de futbolito" {
         assert.equals(posicionEsperada, pelota.position())
     }
 }
-
 
