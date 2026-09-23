@@ -26,7 +26,7 @@ object lionel {
 	method patear() {
 		objetivo.patear()
 	}
-
+ 
 	
 }
 
