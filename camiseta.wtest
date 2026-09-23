@@ -1,0 +1,21 @@
+import objetos.*
+describe "Camiseta" {
+
+	test "Lionel empieza con la camiseta titular" {
+		assert.equals(titular,lionel.camiseta())
+	}
+
+	test "Lionel cambia a la camiseta suplente" {
+        lionel.position(game.at(0, 5))
+        lionel.cambiarCamiseta()
+        
+        assert.equals(suplente, lionel.camiseta())
+}
+
+
+	test "Lionel no puede cambiarse la camiseta" {
+		lionel.position(game.at(5, 5))
+
+		assert.throwsException({ lionel.cambiarCamiseta() })
+	}
+}
