@@ -1,9 +1,42 @@
 import objetos.*
-describe "test de futbol"{
-    test "taquito" {
-      lionel.position( game.at(5,5))
-      pelota.position( game.at(5,5))
-      lionel.darPaseAtras()
-      assert.notEquals(game.at(5,5), pelota.position())
-    }
+
+describe "tests de futbolito" {
+  method initialize() {
+    // Se define la dimensión del tablero para los tests
+    game.width(15)
+    game.height(10)
+    
+    // Se reestablecen las posiciones iniciales antes de cada test
+    pelota.position(game.at(5, 5))
+    lionel.position(game.at(3, 5))
+  }
+  
+  test "taquito" {
+    lionel.position(game.at(5, 5))
+    pelota.position(game.at(5, 5))
+    lionel.darPaseAtras()
+    assert.notEquals(game.at(5, 5), pelota.position())
+  }
+  
+  test "buscar pelota" {
+    assert.notEquals(pelota.position(), lionel.position())
+    lionel.buscar()
+    assert.equals(pelota.position(), lionel.position())
+  }
+  
+  test "inicio" {
+    const origen = game.at(0, 5)
+    assert.notEquals(origen, pelota.position())
+    pelota.inicio()
+    assert.equals(origen, pelota.position())
+  }
+  
+  test "patear la pelota" {
+    // La pelota inicia en (5,5) y al patear debe avanzar 3 posiciones a la derecha -> (8,5)
+    const posicionEsperada = game.at(8, 5)
+    assert.notEquals(posicionEsperada, pelota.position())
+    
+    lionel.patear()
+    assert.equals(posicionEsperada, pelota.position())
+  }
 }
